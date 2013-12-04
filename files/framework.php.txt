@@ -981,7 +981,7 @@ if( !class_exists( 'ReduxFramework' ) ) {
 
             wp_register_style(
                 'redux-css',
-                self::$_url . 'assets/css/style.css',
+                self::$_url . 'assets/css/redux.css',
                 array( 'farbtastic' ),
                 time(),
                 'all'
@@ -1096,16 +1096,28 @@ if( !class_exists( 'ReduxFramework' ) ) {
                 true
             );   
             
-            wp_register_script(
-                'redux-js',
-                self::$_url . 'assets/js/redux.min.js',
-                array( 'jquery', 'select2-js', 'ace-editor-js' ),
-                filemtime( self::$_dir . 'assets/js/redux.min.js' ),
-                true
-            );
-
-
-
+            // Embed the compress version unless in dev mode
+            if ( isset($this->args['dev_mode'] ) && $this->args['dev_mode'] === true) {
+                if ( file_exists( self::$_dir . 'assets/js/redux.js' ) ) {
+                    wp_register_script(
+                        'redux-js',
+                        self::$_url . 'assets/js/redux.min.js',
+                        array( 'jquery', 'select2-js', 'ace-editor-js' ),
+                        filemtime( self::$_dir . 'assets/js/redux.js' ),
+                        true
+                    );
+                }
+            } else {
+                if ( file_exists( self::$_dir . 'assets/js/redux.js' ) ) {
+                    wp_register_script(
+                        'redux-js',
+                        self::$_url . 'assets/js/redux.min.js',
+                        array( 'jquery', 'select2-js', 'ace-editor-js' ),
+                        filemtime( self::$_dir . 'assets/js/redux.min.js' ),
+                        true
+                    );
+                }
+            }
             
             foreach( $this->sections as $section ) {
                 if( isset( $section['fields'] ) ) {
@@ -1192,12 +1204,7 @@ if( !class_exists( 'ReduxFramework' ) ) {
                 $this->localize_data
             );
 
-            // Don't embed the individual enqueus if not needed.
-            if ( isset($this->args['dev_mode'] ) && $this->args['dev_mode'] === true) {
-                if ( file_exists( self::$_dir . 'assets/js/redux.min.js' ) ) {
-                    wp_enqueue_script('redux-js', 'select2-js');
-                }
-            }              
+            wp_enqueue_script('redux-js'); // Enque the JS now
 
             do_action( 'redux-enqueue-' . $this->args['opt_name'], $this ); // REMOVE
             do_action( 'redux/page/' . $this->args['opt_name'] . '/enqueue' );
@@ -1865,7 +1872,7 @@ if( !class_exists( 'ReduxFramework' ) ) {
             echo '</ul>';
             echo '</div>';
 
-            echo '<div id="redux-main">';
+            echo '<div class="redux-main">';
 
             foreach( $this->sections as $k => $section ) {
                 echo '<div id="' . $k . '_section_group' . '" class="redux-group-tab">';

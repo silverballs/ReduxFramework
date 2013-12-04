@@ -1,0 +1,2237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                    <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                    </ul>
+                    </li>
+                    <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                    <i class="icon-list-alt"></i>&#160;Errors
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                    <i class="icon-list-alt"></i>&#160;Markers
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-320633748"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-320633748" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Redux_Tracking.html">Redux_Tracking</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_slider.html">ReduxFramework_slider</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_textarea.html">ReduxFramework_textarea</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_gallery.html">ReduxFramework_gallery</a></li>
+                                                    <li class="class"><a href="../classes/Redux_Validation_preg_replace.html">Redux_Validation_preg_replace</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_divide.html">ReduxFramework_divide</a></li>
+                                                    <li class="class"><a href="../classes/Redux_Validation_no_special_chars.html">Redux_Validation_no_special_chars</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_color.html">ReduxFramework_color</a></li>
+                                                    <li class="class"><a href="../classes/Simple_System_Info.html">Simple_System_Info</a></li>
+                                                    <li class="class"><a href="../classes/Redux_Metaboxes.html">Redux_Metaboxes</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_password.html">ReduxFramework_password</a></li>
+                                                    <li class="class"><a href="../classes/Redux_Validation_css.html">Redux_Validation_css</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_dimensions.html">ReduxFramework_dimensions</a></li>
+                                                    <li class="class"><a href="../classes/EDD_License.html">EDD_License</a></li>
+                                                    <li class="class"><a href="../classes/Redux_Validation_str_replace.html">Redux_Validation_str_replace</a></li>
+                                                    <li class="class"><a href="../classes/Redux_Validation_html.html">Redux_Validation_html</a></li>
+                                                    <li class="class"><a href="../classes/Redux_Validation_comma_numeric.html">Redux_Validation_comma_numeric</a></li>
+                                                    <li class="class"><a href="../classes/Redux_Validation_html_custom.html">Redux_Validation_html_custom</a></li>
+                                                    <li class="class"><a href="../classes/Redux_Validation_no_html.html">Redux_Validation_no_html</a></li>
+                                                    <li class="class"><a href="../classes/Redux_Validation_js.html">Redux_Validation_js</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_raw_align.html">ReduxFramework_raw_align</a></li>
+                                                    <li class="class"><a href="../classes/EDD_SL_Theme_Updater.html">EDD_SL_Theme_Updater</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_border.html">ReduxFramework_border</a></li>
+                                                    <li class="class"><a href="../classes/Redux_Validation_numeric.html">Redux_Validation_numeric</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_color_gradient.html">ReduxFramework_color_gradient</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_ace_editor.html">ReduxFramework_ace_editor</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework.html">ReduxFramework</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_spacing.html">ReduxFramework_spacing</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_select.html">ReduxFramework_select</a></li>
+                                                    <li class="class"><a href="../classes/Browser.html">Browser</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_editor.html">ReduxFramework_editor</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_sorter.html">ReduxFramework_sorter</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_switch.html">ReduxFramework_switch</a></li>
+                                                    <li class="class"><a href="../classes/Redux_Validation_color_rgba.html">Redux_Validation_color_rgba</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_image_select.html">ReduxFramework_image_select</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_link_color.html">ReduxFramework_link_color</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_spinner.html">ReduxFramework_spinner</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_text.html">ReduxFramework_text</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_date.html">ReduxFramework_date</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_multi_text.html">ReduxFramework_multi_text</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_checkbox.html">ReduxFramework_checkbox</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_extension_customizer.html">ReduxFramework_extension_customizer</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_edd_license.html">ReduxFramework_edd_license</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_raw.html">ReduxFramework_raw</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_radio.html">ReduxFramework_radio</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_group.html">ReduxFramework_group</a></li>
+                                                    <li class="class"><a href="../classes/Redux_Validation_date.html">Redux_Validation_date</a></li>
+                                                    <li class="class"><a href="../classes/EDD_SL_Plugin_Updater.html">EDD_SL_Plugin_Updater</a></li>
+                                                    <li class="class"><a href="../classes/Redux_Validation_color.html">Redux_Validation_color</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_info.html">ReduxFramework_info</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_sortable.html">ReduxFramework_sortable</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_button_set.html">ReduxFramework_button_set</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_typography.html">ReduxFramework_typography</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_extension_edd.html">ReduxFramework_extension_edd</a></li>
+                                                    <li class="class"><a href="../classes/Redux_Validation_email.html">Redux_Validation_email</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_media.html">ReduxFramework_media</a></li>
+                                                    <li class="class"><a href="../classes/Redux_Validation_url.html">Redux_Validation_url</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_slides.html">ReduxFramework_slides</a></li>
+                                                    <li class="class"><a href="../classes/ReduxFramework_extension_shortcodes.html">ReduxFramework_extension_shortcodes</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/default.html">\</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\</small>ReduxFramework_extension_shortcodes</h1>
+                    <p><em>Redux Framework shortcode extension class. Takes the common Wordpress functions `wp_get_theme()` and `bloginfo()` and a few other functions and makes them accessible via shortcodes. Below you will find a table for the possible shortcodes and their values.</em></p>
+                    <table>
+<thead>
+<tr>
+  <th>shortcode</th>
+  <th>Function</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>blog-name</td>
+  <td>bloginfo("name")</td>
+  <td>Displays the "Site Title" set in Settings > General. This data is retrieved from the "blogname" record in the wp_options table.</td>
+</tr>
+<tr>
+  <td>blog-description</td>
+  <td>bloginfo("description")</td>
+  <td>Displays the "Tagline" set in Settings > General. This data is retrieved from the "blogdescription" record in the wp_options table.</td>
+</tr>
+<tr>
+  <td>blog-wpurl</td>
+  <td>bloginfo("wpurl")</td>
+  <td>Displays the "WordPress address (URL)" set in Settings > General. This data is retrieved from the "siteurl" record in the wp_options table. Consider using <strong>blog-root_url</strong> instead, especially for multi-site configurations using paths instead of subdomains (it will return the root site not the current sub-site).</td>
+</tr>
+<tr>
+  <td>blog-root_url</td>
+  <td>site_url()</td>
+  <td>Return the root site, not the current sub-site.</td>
+</tr>
+<tr>
+  <td>blog-url</td>
+  <td>home_url()</td>
+  <td>Displays the "Site address (URL)" set in Settings > General. This data is retrieved from the "home" record in the wp_options table.</td>
+</tr>
+<tr>
+  <td>blog-admin_email</td>
+  <td>bloginfo("admin_email")</td>
+  <td>Displays the "E-mail address" set in Settings > General. This data is retrieved from the "admin_email" record in the wp_options table.</td>
+</tr>
+<tr>
+  <td>blog-charset</td>
+  <td>bloginfo("charset")</td>
+  <td>Displays the "Encoding for pages and feeds" set in Settings > Reading. This data is retrieved from the "blog_charset" record in the wp_options table. Note: In Version 3.5.0 and later, character encoding is no longer configurable from the Administration Panel. Therefore, this parameter always echoes "UTF-8", which is the default encoding of WordPress.</td>
+</tr>
+<tr>
+  <td>blog-version</td>
+  <td>bloginfo("version")</td>
+  <td>Displays the WordPress Version you use. This data is retrieved from the $wp_version variable set in wp-includes/version.php.</td>
+</tr>
+<tr>
+  <td>blog-html_type</td>
+  <td>bloginfo("html_type")</td>
+  <td>Displays the Content-Type of WordPress HTML pages (default: "text/html"). This data is retrieved from the "html_type" record in the wp_options table. Themes and plugins can override the default value using the pre_option_html_type filter.</td>
+</tr>
+<tr>
+  <td>blog-text_direction</td>
+  <td>bloginfo("text_direction")</td>
+  <td>Displays the Text Direction of WordPress HTML pages. Consider using <strong>blog-text_direction_boolean</strong> instead if you want a true/false response.</td>
+</tr>
+<tr>
+  <td>blog-text_direction_boolean</td>
+  <td>is_rtl()</td>
+  <td>Displays true/false check if the Text Direction of WordPress HTML pages is left instead of right</td>
+</tr>
+<tr>
+  <td>blog-language</td>
+  <td>bloginfo("language")</td>
+  <td>Displays the language of WordPress.</td>
+</tr>
+<tr>
+  <td>blog-stylesheet_url</td>
+  <td>get_stylesheet_uri()</td>
+  <td>Displays the primary CSS (usually style.css) file URL of the active theme.</td>
+</tr>
+<tr>
+  <td>blog-stylesheet_directory</td>
+  <td>bloginfo("stylesheet_directory")</td>
+  <td>Displays the stylesheet directory URL of the active theme. (Was a local path in earlier WordPress versions.) Consider echoing get_stylesheet_directory_uri() instead.</td>
+</tr>
+<tr>
+  <td>blog-template_url</td>
+  <td>get_template_directory_uri()</td>
+  <td>Parent template uri. Consider using <strong>blog-child_template_url</strong> for the child template URI.</td>
+</tr>
+<tr>
+  <td>blog-child_template_url</td>
+  <td>get_stylesheet_directory_uri()</td>
+  <td>Child template URI.</td>
+</tr>
+<tr>
+  <td>blog-pingback_url</td>
+  <td>bloginfo("pingback_url")</td>
+  <td>Displays the Pingback XML-RPC file URL (xmlrpc.php).</td>
+</tr>
+<tr>
+  <td>blog-atom_url</td>
+  <td>bloginfo("atom_url")</td>
+  <td>Displays the Atom feed URL (/feed/atom).</td>
+</tr>
+<tr>
+  <td>blog-rdf_url</td>
+  <td>bloginfo("rdf_url")</td>
+  <td>Displays the RDF/RSS 1.0 feed URL (/feed/rfd).</td>
+</tr>
+<tr>
+  <td>blog-rss_url</td>
+  <td>bloginfo("rss_url")</td>
+  <td>Displays the RSS 0.92 feed URL (/feed/rss).</td>
+</tr>
+<tr>
+  <td>blog-rss2_url</td>
+  <td>bloginfo("rss2_url")</td>
+  <td>Displays the RSS 2.0 feed URL (/feed).</td>
+</tr>
+<tr>
+  <td>blog-comments_atom_url</td>
+  <td>bloginfo("comments_atom_url")</td>
+  <td>Displays the comments Atom feed URL (/comments/feed).</td>
+</tr>
+<tr>
+  <td>blog-comments_rss2_url</td>
+  <td>bloginfo("comments_rss2_url")</td>
+  <td>Displays the comments RSS 2.0 feed URL (/comments/feed).</td>
+</tr>
+<tr>
+  <td>login-url</td>
+  <td>wp_login_url()</td>
+  <td>Returns the Wordpress login URL.</td>
+</tr>
+<tr>
+  <td>login-url</td>
+  <td>wp_logout_url()</td>
+  <td>Returns the Wordpress logout URL.</td>
+</tr>
+<tr>
+  <td>current_year</td>
+  <td>date("Y")</td>
+  <td>Returns the current year.</td>
+</tr>
+<tr>
+  <td>theme-name</td>
+  <td>$theme_info->get("Name")</td>
+  <td>Theme name as given in theme's style.css</td>
+</tr>
+<tr>
+  <td>theme-uri</td>
+  <td>$theme_info->get("ThemeURI")</td>
+  <td>The path to the theme's directory</td>
+</tr>
+<tr>
+  <td>theme-description</td>
+  <td>$theme_info->get("Description")</td>
+  <td>The description of the theme</td>
+</tr>
+<tr>
+  <td>theme-author</td>
+  <td>$theme_info->get("Author")</td>
+  <td>The theme's author</td>
+</tr>
+<tr>
+  <td>theme-author_uri</td>
+  <td>$theme_info->get("AuthorURI")</td>
+  <td>The website of the theme author</td>
+</tr>
+<tr>
+  <td>theme-version</td>
+  <td>$theme_info->get("Version")</td>
+  <td>The version of the theme</td>
+</tr>
+<tr>
+  <td>theme-template</td>
+  <td>$theme_info->get("Template")</td>
+  <td>The folder name of the current theme</td>
+</tr>
+<tr>
+  <td>theme-status</td>
+  <td>$theme_info->get("Status")</td>
+  <td>If the theme is published</td>
+</tr>
+<tr>
+  <td>theme-tags</td>
+  <td>$theme_info->get("Tags")</td>
+  <td>Tags used to describe the theme</td>
+</tr>
+<tr>
+  <td>theme-text_domain</td>
+  <td>$theme_info->get("TextDomain")</td>
+  <td>The text domain used in the theme for translation purposes</td>
+</tr>
+<tr>
+  <td>theme-domain_path</td>
+  <td>$theme_info->get("DomainPath")</td>
+  <td>Path to the theme translation files</td>
+</tr>
+</tbody>
+</table>
+
+
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_blog_admin_email" class="">blog_admin_email()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_blog_atom_url" class="">blog_atom_url()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_blog_charset" class="">blog_charset()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_blog_comments_rss2_url" class="">blog_comments_rss2_url()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_blog_description" class="">blog_description()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_blog_html_type" class="">blog_html_type()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_blog_language" class="">blog_language()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_blog_name" class="">blog_name()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_blog_pingback_url" class="">blog_pingback_url()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_blog_rdf_url" class="">blog_rdf_url()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_blog_rss2_url" class="">blog_rss2_url()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_blog_stylesheet_directory" class="">blog_stylesheet_directory()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_blog_stylesheet_url" class="">blog_stylesheet_url()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_blog_template_directory" class="">blog_template_directory()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_blog_template_url" class="">blog_template_url()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_blog_child_template_url" class="">blog_child_template_url()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_blog_text_direction" class="">blog_text_direction()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_blog_text_direction_boolean" class="">blog_text_direction_boolean()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_blog_url" class="">blog_url()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_blog_version" class="">blog_version()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_blog_wpurl" class="">blog_wpurl()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_blog_root_url" class="">blog_root_url()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_blog_theme_name" class="">blog_theme_name()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_theme_uri" class="">theme_uri()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_theme_description" class="">theme_description()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_theme_author" class="">theme_author()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_theme_author_uri" class="">theme_author_uri()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_theme_version" class="">theme_version()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_theme_template" class="">theme_template()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_theme_status" class="">theme_status()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_theme_tags" class="">theme_tags()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_theme_text_domain" class="">theme_text_domain()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_theme_domain_path" class="">theme_domain_path()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_login_url" class="">login_url()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_logout_url" class="">logout_url()</a><br />
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#method_current_year" class="">current_year()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No public properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <em>No protected methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/ReduxFramework_extension_shortcodes.html#property_parent" class="">$parent</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <em>No private methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No private properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/extensions.shortcodes.extension_shortcodes.php.html"><div class="path-wrapper">extensions/shortcodes/extension_shortcodes.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">\Redux_Framework</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                    <div class="namespace-wrapper">\ReduxFramework_extension_shortcodes</div>
+                            </dd>
+
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr>
+                            <th>
+                                version
+                            </th>
+                            <td>
+                                                                    
+
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
+                                since
+                            </th>
+                            <td>
+                                                                    
+
+                                                            </td>
+                        </tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_parent" name="property_parent" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$parent</h3>
+                <pre class="signature">$parent</pre>
+                <p><em></em></p>
+                
+
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___construct" name="method___construct" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__construct()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__construct(array <span class="argument">$parent</span>) : void</pre>
+                <p><em>Class Constructor. Defines the args for the extions class</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$parent</td>
+                                <td><p>Redux_Options class instance</p>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            since
+                        </th>
+                        <td>
+                                                            
+
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_blog_admin_email" name="method_blog_admin_email" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">blog_admin_email()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">blog_admin_email( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \bloginfo(&#039;admin_email&#039;)</pre>
+                <p><em>Shortcode - blog-admin_email</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \bloginfo('admin_email')
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_blog_atom_url" name="method_blog_atom_url" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">blog_atom_url()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">blog_atom_url( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \bloginfo(&#039;atom_url&#039;)</pre>
+                <p><em>Shortcode - blog-atom_url</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \bloginfo('atom_url')
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_blog_charset" name="method_blog_charset" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">blog_charset()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">blog_charset( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \bloginfo(&#039;charset&#039;)</pre>
+                <p><em>Shortcode - blog-charset</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \bloginfo('charset')
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_blog_comments_rss2_url" name="method_blog_comments_rss2_url" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">blog_comments_rss2_url()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">blog_comments_rss2_url( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \bloginfo(&#039;comments_rss2_url&#039;)</pre>
+                <p><em>Shortcode - blog-comments_rss2_url</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \bloginfo('comments_rss2_url')
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_blog_description" name="method_blog_description" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">blog_description()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">blog_description( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \bloginfo(&#039;description&#039;)</pre>
+                <p><em>Shortcode - blog-description</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \bloginfo('description')
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_blog_html_type" name="method_blog_html_type" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">blog_html_type()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">blog_html_type( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \bloginfo(&#039;html_type&#039;)</pre>
+                <p><em>Shortcode - blog-html_type</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \bloginfo('html_type')
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_blog_language" name="method_blog_language" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">blog_language()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">blog_language( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \bloginfo(&#039;language&#039;)</pre>
+                <p><em>Shortcode - blog-language</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \bloginfo('language')
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_blog_name" name="method_blog_name" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">blog_name()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">blog_name( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \bloginfo(&#039;name&#039;)</pre>
+                <p><em>Shortcode - blog-name</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \bloginfo('name')
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_blog_pingback_url" name="method_blog_pingback_url" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">blog_pingback_url()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">blog_pingback_url( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \bloginfo(&#039;pingback_url&#039;)</pre>
+                <p><em>Shortcode - blog-pingback_url</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \bloginfo('pingback_url')
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_blog_rdf_url" name="method_blog_rdf_url" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">blog_rdf_url()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">blog_rdf_url( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \bloginfo(&#039;rdf_url&#039;)</pre>
+                <p><em>Shortcode - blog-rdf_url</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \bloginfo('rdf_url')
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_blog_rss2_url" name="method_blog_rss2_url" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">blog_rss2_url()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">blog_rss2_url( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \bloginfo(&#039;rss2_url&#039;)</pre>
+                <p><em>Shortcode - blog-rss2_url</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \bloginfo('rss2_url')
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_blog_stylesheet_directory" name="method_blog_stylesheet_directory" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">blog_stylesheet_directory()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">blog_stylesheet_directory( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \bloginfo(&#039;stylesheet_directory&#039;)</pre>
+                <p><em>Shortcode - blog-stylesheet_directory</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \bloginfo('stylesheet_directory')
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_blog_stylesheet_url" name="method_blog_stylesheet_url" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">blog_stylesheet_url()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">blog_stylesheet_url( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \get_stylesheet_uri()</pre>
+                <p><em>Shortcode - blog-stylesheet_url</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \get_stylesheet_uri()
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_blog_template_directory" name="method_blog_template_directory" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">blog_template_directory()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">blog_template_directory( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \bloginfo(&#039;template_directory&#039;)</pre>
+                <p><em>Shortcode - blog-template_directory</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \bloginfo('template_directory')
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_blog_template_url" name="method_blog_template_url" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">blog_template_url()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">blog_template_url( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \get_template_directory_uri()</pre>
+                <p><em>Shortcode - blog-template_url</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \get_template_directory_uri()
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_blog_child_template_url" name="method_blog_child_template_url" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">blog_child_template_url()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">blog_child_template_url( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \get_stylesheet_directory_uri()</pre>
+                <p><em>Shortcode - blog-child_template_url</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \get_stylesheet_directory_uri()
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_blog_text_direction" name="method_blog_text_direction" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">blog_text_direction()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">blog_text_direction( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \bloginfo(&#039;text_direction&#039;)</pre>
+                <p><em>Shortcode - blog-text_direction</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \bloginfo('text_direction')
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_blog_text_direction_boolean" name="method_blog_text_direction_boolean" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">blog_text_direction_boolean()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">blog_text_direction_boolean( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \is_rtl()</pre>
+                <p><em>Shortcode - blog-text_direction_boolean</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \is_rtl()
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_blog_url" name="method_blog_url" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">blog_url()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">blog_url( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \bloginfo(&#039;url&#039;)</pre>
+                <p><em>Shortcode - blog-url</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \bloginfo('url')
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_blog_version" name="method_blog_version" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">blog_version()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">blog_version( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \bloginfo(&#039;version&#039;)</pre>
+                <p><em>Shortcode - blog-version</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \bloginfo('version')
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_blog_wpurl" name="method_blog_wpurl" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">blog_wpurl()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">blog_wpurl( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \bloginfo(&#039;wpurl&#039;)</pre>
+                <p><em>Shortcode - blog-wpurl</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \bloginfo('wpurl')
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_blog_root_url" name="method_blog_root_url" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">blog_root_url()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">blog_root_url( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \site_url()</pre>
+                <p><em>Shortcode - blog-root_url</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \site_url()
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_blog_theme_name" name="method_blog_theme_name" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">blog_theme_name()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">blog_theme_name( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \theme_info(&#039;Name&#039;)</pre>
+                <p><em>Shortcode - theme-name</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \theme_info('Name')
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_theme_uri" name="method_theme_uri" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">theme_uri()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">theme_uri( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \theme_info(&#039;ThemeURI&#039;)</pre>
+                <p><em>Shortcode - theme-uri</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \theme_info('ThemeURI')
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_theme_description" name="method_theme_description" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">theme_description()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">theme_description( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \theme_info(&#039;Description&#039;)</pre>
+                <p><em>Shortcode - theme-description</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \theme_info('Description')
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_theme_author" name="method_theme_author" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">theme_author()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">theme_author( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \theme_info(&#039;Author&#039;)</pre>
+                <p><em>Shortcode - theme-author</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \theme_info('Author')
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_theme_author_uri" name="method_theme_author_uri" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">theme_author_uri()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">theme_author_uri( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \theme_info(&#039;AuthorURI&#039;)</pre>
+                <p><em>Shortcode - theme-author_uri</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \theme_info('AuthorURI')
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_theme_version" name="method_theme_version" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">theme_version()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">theme_version( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \theme_info(&#039;Version&#039;)</pre>
+                <p><em>Shortcode - theme-version</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \theme_info('Version')
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_theme_template" name="method_theme_template" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">theme_template()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">theme_template( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \theme_info(&#039;Template&#039;)</pre>
+                <p><em>Shortcode - theme-template</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \theme_info('Template')
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_theme_status" name="method_theme_status" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">theme_status()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">theme_status( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \theme_info(&#039;Status&#039;)</pre>
+                <p><em>Shortcode - theme-status</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \theme_info('Status')
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_theme_tags" name="method_theme_tags" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">theme_tags()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">theme_tags( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \theme_info(&#039;Tags&#039;)</pre>
+                <p><em>Shortcode - theme-tags</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \theme_info('Tags')
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_theme_text_domain" name="method_theme_text_domain" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">theme_text_domain()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">theme_text_domain( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \theme_info(&#039;TextDomain&#039;)</pre>
+                <p><em>Shortcode - theme-text_domain</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \theme_info('TextDomain')
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_theme_domain_path" name="method_theme_domain_path" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">theme_domain_path()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">theme_domain_path( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \theme_info(&#039;DomainPath&#039;)</pre>
+                <p><em>Shortcode - theme-domain_path</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \theme_info('DomainPath')
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_login_url" name="method_login_url" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">login_url()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">login_url( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \wp_login_url()</pre>
+                <p><em>Shortcode - login-url</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \wp_login_url()
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_logout_url" name="method_logout_url" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">logout_url()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">logout_url( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \wp_logout_url()</pre>
+                <p><em>Shortcode - logout-url</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \wp_logout_url()
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_current_year" name="method_current_year" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">current_year()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">current_year( <span class="argument">$atts</span>,  <span class="argument">$content</span>) : \date(&quot;Y&quot;)</pre>
+                <p><em>Shortcode - current-year</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$atts</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$content</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \date("Y")
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">extension_shortcodes.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/extensions/shortcodes/extension_shortcodes.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="">Errors</a></li>
+                                    <li><a href="">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on December 4th, 2013 at 18:45.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>
