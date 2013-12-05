@@ -1,6 +1,6 @@
 
 <?php
-require_once(dirname(__FILE__).'/sample-sample.php');
+require_once(dirname(__FILE__).'/sample-config.php');
 
 /**
 	ReduxFramework Sample Config File
